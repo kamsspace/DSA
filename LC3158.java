@@ -1,3 +1,5 @@
+// Runtime: 1ms. Beats 99.33%
+// Memory: 42.34MB. Beats 97.26%
 class Solution {
     public int duplicateNumbersXOR(int[] nums) {
         int a = 0;
