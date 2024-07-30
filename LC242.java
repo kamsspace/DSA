@@ -17,3 +17,19 @@ class Solution {
         return Arrays.toString(c);
     }
 }
+
+// runtime: 3ms, beats 88%
+// memory: 44.42MB, beats 41%
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+        if (s.length() == 1 && t.length() == 1) return t.equals(s);
+        char[] a = s.toCharArray();
+        char[] b = t.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        return new String(a).equals(new String(b));
+    }
+}
