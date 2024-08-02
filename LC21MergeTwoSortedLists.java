@@ -36,13 +36,9 @@ class Solution {
             if (a <= b) {
                 current.next = new ListNode(a);
                 wait2 = false;
-//                if (list2 == null) current.next.next = list1;
-//                else current.next.next = new ListNode(b);
             } else {
                 current.next = new ListNode(b);
                 wait1 = false;
-//                if (list1 == null) current.next.next = list2;
-//                else current.next.next = new ListNode(a);
             }
 
             current = current.next;
