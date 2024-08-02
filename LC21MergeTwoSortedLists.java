@@ -31,13 +31,11 @@ class Solution {
                 current.next = list1;
                 return list3.next;
             }
-            int a = (list1 != null) ? list1.val : 0;
-            int b = (list2 != null) ? list2.val : 0;
-            if (a <= b) {
-                current.next = new ListNode(a);
+            if (list1.val <= list2.val) {
+                current.next = new ListNode(list1.val);
                 wait2 = false;
             } else {
-                current.next = new ListNode(b);
+                current.next = new ListNode(list2.val);
                 wait1 = false;
             }
 
