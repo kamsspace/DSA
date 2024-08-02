@@ -23,11 +23,11 @@ class Solution {
             boolean wait1 = true;
             boolean wait2 = true;
 
-            if (list1 == null && list2 != null) {
+            if (list1 == null) {
                 current.next = list2;
                 return list3.next;
             }
-            if (list2 == null && list1 != null){
+            if (list2 == null){
                 current.next = list1;
                 return list3.next;
             }
