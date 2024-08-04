@@ -1,8 +1,8 @@
 // problem: 203. Remove Linked List Elements
 // difficulty: easy
 
-// runtime: 2ms, beats
-// memory:
+// runtime: 2ms, beats 91.93%
+// memory: 45.88MB, beats 9.83%
 
 /**
  * Definition for singly-linked list.
