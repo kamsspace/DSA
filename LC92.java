@@ -3,7 +3,6 @@
 // time: 2 hours
 // runtime: 0ms, beats 100%
 // memory: 40.94MB, beats 78.74%
-
 /**
  * Definition for singly-linked list.
  * public class ListNode {
