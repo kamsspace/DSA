@@ -1,0 +1,63 @@
+// problem: 445. Add Two Numbers II
+// difficulty: medium
+// time: 2 hours
+// runtime: 2ms, beats 66%
+// memory: 43.9MB, beats 91+%
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode l3 = new ListNode();
+        ListNode j = new ListNode();
+
+        ArrayDeque<Integer> o = new ArrayDeque<>();
+        ArrayDeque<Integer> t = new ArrayDeque<>();
+
+        while (l1 != null || l2 != null) {
+            if (l1 != null) {
+                o.push(l1.val);
+                l1 = l1.next;
+            }
+
+            if (l2 != null) {
+                t.push(l2.val);
+                l2 = l2.next;
+            }
+        }
+
+        int c = 0;
+
+        while ((!(o.isEmpty())) || !(t.isEmpty())) {
+            int s = 0;
+            int a = (!(o.isEmpty())) ? o.pop() : 0;
+            int b = (!(t.isEmpty())) ? t.pop() : 0;
+
+            s += c + a + b;
+            c = s / 10;
+            s %= 10;
+
+            ListNode n = new ListNode(s);
+            l3.next = n;
+            n.next = j.next;
+            j.next = l3.next;
+        }
+
+        if (c > 0) {
+            ListNode n = new ListNode(c);
+            l3.next = n;
+            n.next = j.next;
+            j.next = l3.next;
+        }
+
+        return l3.next;
+    }
+}
