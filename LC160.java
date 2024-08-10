@@ -2,6 +2,48 @@
 // difficulty: easy
 // time: 30 minutes
 
+// solution 3
+// runtime: 1ms, beats 99.91.58%
+// memory: 48.49MB, beats 54.69%
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+
+        ListNode a = headA;
+        ListNode b = headB;
+        
+        while (a != b) {
+            a = (a == null) ? headB : a.next;
+            b = (b == null) ? headA : b.next;
+        }
+
+        return a;
+    }
+}
+
+
 // solution 2
 // runtime: 6ms, beats 23.58%
 // memory: 47.76MB, beats 88.99%
