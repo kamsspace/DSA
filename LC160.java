@@ -1,5 +1,5 @@
 // problem: 160. Intersection of Two Linked Lists
-// difficulty: medium
+// difficulty: easy
 // time: 30 minutes
 // runtime: 8ms, beats 12.82%
 // memory: 47.92MB, beats 82.84%
