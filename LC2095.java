@@ -2,6 +2,38 @@
 // difficulty: medium
 // time: 8 minutes
 // runtime: 3ms, beats 99.72%
+// memory: 63.20MB, beats 69.17%
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteMiddle(ListNode head) {
+        ListNode r = new ListNode();
+        ListNode a = r;
+        a.next = head;
+        int c = 0;
+
+        while (head != null) {
+            c++;
+            head = head.next;
+
+            if (c % 2 == 0) a = a.next;
+        }
+
+        a.next = a.next.next;
+        return r.next;
+    }
+}
+
+
+// runtime: 3ms, beats 99.72%
 // memory: 63.93MB, beats 48.68%
 
 /**
