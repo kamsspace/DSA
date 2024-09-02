@@ -56,3 +56,13 @@ class Solution {
         return n1.add(n2).toString(2);
     }
 }
+
+
+// runtime: 5ms, beats 20.22%
+// memory: 42.50MB, beats 28.73%
+
+class Solution {
+    public String addBinary(String a, String b) {
+        return new java.math.BigInteger(a, 2).add(new java.math.BigInteger(b, 2)).toString(2);
+    }
+}
