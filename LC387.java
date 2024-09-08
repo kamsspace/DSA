@@ -20,3 +20,25 @@ class Solution {
         return -1;
     }
 }
+
+// runtime 497ms, beats 5.17%
+// memory: 46.56MB, beats 5.11%
+class Solution {
+    public int firstUniqChar(String s) {
+        if (s.length() == 1) return 0;
+
+        HashSet<Character> set = new HashSet<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            String sub = s.substring(i+1);
+            if (!set.contains(c)) {
+                if (sub.indexOf(c) != -1) {
+                    set.add(c);
+                } else return i;
+            }
+        }
+
+        return -1;
+    }
+}
