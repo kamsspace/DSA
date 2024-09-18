@@ -22,3 +22,25 @@ class Solution {
         return l.size();
     }
 }
+
+
+
+
+// runtime: 0ms, beats 100%
+// memory: 44.50MB, beats 80.63%
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int prev = nums[0];
+        int in = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == prev) continue;
+            else {
+                prev = nums[i];
+                nums[in++] = prev;
+            }
+        }
+
+        return in;
+    }
+}
