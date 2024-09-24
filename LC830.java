@@ -18,7 +18,7 @@ class Solution {
                 count++;
             } else {
                 if (count > 2) {
-                    // end = in-1;
+                    // end = in - 1;
                     List<Integer> l = new ArrayList<>();
                     l.add(start);
                     l.add(in-1);
