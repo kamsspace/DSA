@@ -1,5 +1,42 @@
 // problem: 2130. Maximum Twin Sum of a Linked List
 // difficulty: medium
+// runtime: 4ms, beats 96.98%
+// memory: 19%
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int pairSum(ListNode head) {
+        // ListNode h=new ListNode(0,head);
+        int[] _stack=new int[100001];
+        int last=-1;
+        
+        while (head != null) {
+            _stack[++last]=head.val;
+            head=head.next;
+        }
+
+        int i=0,j=last;
+        int max=0,max2=0;
+
+        while (i<=j) {
+            max=Math.max(_stack[i++]+_stack[j--],max);
+        }
+
+        return max;
+    }
+}
+
+
+
+
 // runtime: 5ms, beats 71%
 // memory: 5%
 
