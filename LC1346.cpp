@@ -17,3 +17,18 @@ public:
         return false;
     }
 };
+
+
+// version 2.0
+class Solution {
+    public boolean checkIfExist(int[] arr) {
+        HashSet<Integer> m = new HashSet<>();
+        for (int i : arr) {
+            if (m.contains(i * 2) || (i % 2 == 0 && m.contains(i / 2))) {
+                return true;
+            }
+            m.add(i);
+        }
+        return false;
+    }
+}
